@@ -12,6 +12,9 @@ import { ButtonComponent } from '@components/button/button.component';
       <p>Si lograste llegar hasta acá es porque posees el rol adecuado.</p>
       <div class="flex gap-2 flex-col">
         <app-link-btn class="text-center" routerLink="/">Home</app-link-btn>
+        <app-link-btn class="text-center" routerLink="/profile"
+          >Perfil</app-link-btn
+        >
         <app-button>Cerrar sesión</app-button>
         <p>
           <strong>Nota:</strong> Esta es un proyecto de prueba para poder

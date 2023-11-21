@@ -12,13 +12,17 @@ import { NavbarComponent } from '@components/navbar/navbar.component';
       <h1 class="text-center text-4xl">¡Bienvenido!</h1>
       <p>
         Si lograste llegar hasta acá es porque has iniciado sesión
-        correctamente, intenta dirigirte al panel de administración.
+        correctamente, intenta dirigirte al panel de administración o navegar a
+        tu perfil.
       </p>
-      <div>
+      <div class="flex flex-col gap-2">
+        <app-link-btn class="text-center" routerLink="/profile"
+          >Perfil</app-link-btn
+        >
         <app-link-btn class="text-center" routerLink="/admin"
           >Admin Panel</app-link-btn
         >
-        <p class="mt-2">
+        <p>
           <strong>Nota:</strong> Si no puedes ingresar puede que no poseas el
           rol adecuado, cierra sesión en ingresa con un usuario adecuado
         </p>
