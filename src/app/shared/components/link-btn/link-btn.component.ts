@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
       [routerLink]="routerLink"
       class="py-2 block px-3 w-full bg-neutral-800 hover:bg-neutral-700 transition-all rounded-md active:bg-neutral-800 active:scale-95 duration-100"
     >
-      <ng-content></ng-content>
+      <ng-content />
     </a>
   `,
 })

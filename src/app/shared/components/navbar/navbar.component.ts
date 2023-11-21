@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LogoutIconComponent } from '../logout-icon/logout-icon.component';
+import { IconBtnComponent } from '../icon-btn/icon-btn.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterLink, LogoutIconComponent],
+  imports: [CommonModule, RouterLink, LogoutIconComponent, IconBtnComponent],
   template: `
     <nav
       class="h-16 py-3 sm:py-0 shadow-sm shadow-neutral-700 w-full px-5 sm:px-8 text-neutral-400 flex items-center z-10 bg-neutral-900 justify-between"
@@ -16,13 +17,15 @@ import { LogoutIconComponent } from '../logout-icon/logout-icon.component';
       >
       <section class="flex items-center gap-5">
         <div><strong>Rol: </strong>ADMIN</div>
-        <button
-          class="h-9 w-9 p-1.5 bg-neutral-800 hover:bg-neutral-700 transition-all rounded-md active:bg-neutral-800 active:scale-95 duration-100"
-        >
+        <app-icon-btn (btnClick)="logout()">
           <app-logout-icon class="fill-neutral-400"></app-logout-icon>
-        </button>
+        </app-icon-btn>
       </section>
     </nav>
   `,
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  logout() {
+    console.log('LOGOUT');
+  }
+}
