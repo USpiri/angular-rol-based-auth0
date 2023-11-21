@@ -20,7 +20,7 @@ import { AuthService } from '@auth0/auth0-angular';
           <app-button (btnClick)="login()">Iniciar sesión</app-button>
         </div>
         <a
-          routerLink="/home"
+          routerLink="/"
           class="underline hover:scale-[102%] hover:font-semibold transition-all"
           >Ir a inicio</a
         >
