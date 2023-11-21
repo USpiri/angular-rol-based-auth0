@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LogoutIconComponent } from '../logout-icon/logout-icon.component';
 import { IconBtnComponent } from '../icon-btn/icon-btn.component';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-navbar',
@@ -25,7 +26,8 @@ import { IconBtnComponent } from '../icon-btn/icon-btn.component';
   `,
 })
 export class NavbarComponent {
+  auth = inject(AuthService);
   logout() {
-    console.log('LOGOUT');
+    this.auth.logout();
   }
 }

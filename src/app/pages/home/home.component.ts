@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LinkBtnComponent } from '@components/link-btn/link-btn.component';
 import { NavbarComponent } from '@components/navbar/navbar.component';
 import { ButtonComponent } from '@shared/components/button/button.component';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,7 @@ import { ButtonComponent } from '@shared/components/button/button.component';
         <app-link-btn class="text-center" routerLink="/admin"
           >Admin Panel</app-link-btn
         >
-        <app-button>Cerrar sesión</app-button>
+        <app-button (btnClick)="logout()">Cerrar sesión</app-button>
         <p>
           <strong>Nota:</strong> Si no puedes ingresar puede que no poseas el
           rol adecuado, cierra sesión en ingresa con un usuario adecuado
@@ -33,8 +34,13 @@ import { ButtonComponent } from '@shared/components/button/button.component';
   `,
   styles: `
     :host{
-      @apply flex items-center justify-center flex-col mt-28;
+      @apply flex items-center justify-center flex-col py-28;
     }
   `,
 })
-export class HomeComponent {}
+export class HomeComponent {
+  auth = inject(AuthService);
+  logout() {
+    this.auth.logout();
+  }
+}

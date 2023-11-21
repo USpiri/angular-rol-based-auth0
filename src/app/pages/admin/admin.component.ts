@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LinkBtnComponent } from '@components/link-btn/link-btn.component';
 import { ButtonComponent } from '@components/button/button.component';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   standalone: true,
@@ -15,7 +16,7 @@ import { ButtonComponent } from '@components/button/button.component';
         <app-link-btn class="text-center" routerLink="/profile"
           >Perfil</app-link-btn
         >
-        <app-button>Cerrar sesión</app-button>
+        <app-button (btnClick)="logout()">Cerrar sesión</app-button>
         <p>
           <strong>Nota:</strong> Esta es un proyecto de prueba para poder
           manejar roles con Auth0.
@@ -25,8 +26,13 @@ import { ButtonComponent } from '@components/button/button.component';
   `,
   styles: `
   :host{
-    @apply flex items-center justify-center flex-col mt-28;
+    @apply flex items-center justify-center flex-col py-28;
   }
 `,
 })
-export class AdminComponent {}
+export class AdminComponent {
+  auth = inject(AuthService);
+  logout() {
+    this.auth.logout();
+  }
+}
