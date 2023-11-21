@@ -17,7 +17,7 @@ import { IconBtnComponent } from '../icon-btn/icon-btn.component';
       >
       <section class="flex items-center gap-5">
         <div><strong>Rol: </strong>ADMIN</div>
-        <app-icon-btn (btnClick)="logout()">
+        <app-icon-btn (btnClick)="logout()" title="Logout button">
           <app-logout-icon class="fill-neutral-400"></app-logout-icon>
         </app-icon-btn>
       </section>
