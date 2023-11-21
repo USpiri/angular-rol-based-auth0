@@ -9,8 +9,8 @@ import { RouterOutlet } from '@angular/router';
   imports: [CommonModule, NavbarComponent, RouterOutlet],
   template: `
     <div class="h-screen">
-      <app-navbar></app-navbar>
-      <router-outlet></router-outlet>
+      <app-navbar />
+      <router-outlet />
     </div>
   `,
 })
