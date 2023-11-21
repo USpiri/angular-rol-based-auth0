@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LinkBtnComponent } from '@components/link-btn/link-btn.component';
 import { NavbarComponent } from '@components/navbar/navbar.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, LinkBtnComponent, NavbarComponent],
+  imports: [CommonModule, LinkBtnComponent, NavbarComponent, ButtonComponent],
   template: `
     <section class="max-w-lg w-full flex flex-col gap-8 px-3 sm:px-0">
       <h1 class="text-center text-4xl">¡Bienvenido!</h1>
@@ -22,6 +23,7 @@ import { NavbarComponent } from '@components/navbar/navbar.component';
         <app-link-btn class="text-center" routerLink="/admin"
           >Admin Panel</app-link-btn
         >
+        <app-button>Cerrar sesión</app-button>
         <p>
           <strong>Nota:</strong> Si no puedes ingresar puede que no poseas el
           rol adecuado, cierra sesión en ingresa con un usuario adecuado
