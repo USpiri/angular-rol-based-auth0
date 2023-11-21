@@ -8,7 +8,9 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, ButtonComponent, RouterModule],
   template: `
-    <section class="h-screen flex gap-8 items-center justify-center flex-col">
+    <section
+      class="h-screen flex gap-8 items-center justify-center flex-col px-3 sm:px-0"
+    >
       <div class="max-w-md w-full flex flex-col gap-3">
         <div
           class="border border-neutral-500 rounded-md p-3 flex gap-3 flex-col"

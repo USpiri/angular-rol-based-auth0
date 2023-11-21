@@ -1,14 +1,30 @@
 import { Routes } from '@angular/router';
+import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout.component';
 
 export const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    loadComponent: () => import('./pages').then((m) => m.HomeComponent),
+    component: MainLayoutComponent,
+    children: [
+      {
+        path: '',
+        title: 'Home',
+        loadComponent: () => import('./pages').then((m) => m.HomeComponent),
+      },
+      {
+        path: 'admin',
+        title: 'Admin Dasboard',
+        loadComponent: () => import('./pages').then((m) => m.AdminComponent),
+      },
+    ],
   },
   {
     path: 'login',
+    title: 'Login',
     loadComponent: () => import('./pages').then((m) => m.LoginComponent),
   },
-  { path: '**', redirectTo: '' },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
