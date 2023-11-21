@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LinkBtnComponent } from '../../shared/components/link-btn/link-btn.component';
-import { ButtonComponent } from '../../shared/components/button/button.component';
+import { LinkBtnComponent } from '@components/link-btn/link-btn.component';
+import { ButtonComponent } from '@components/button/button.component';
 
 @Component({
   standalone: true,

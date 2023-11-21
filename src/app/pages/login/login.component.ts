@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from '../../shared/components/button/button.component';
-import { RouterModule } from '@angular/router';
+import { ButtonComponent } from '@components/button/button.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, RouterModule],
+  imports: [CommonModule, ButtonComponent, RouterLink],
   template: `
     <section
       class="h-screen flex gap-8 items-center justify-center flex-col px-3 sm:px-0"

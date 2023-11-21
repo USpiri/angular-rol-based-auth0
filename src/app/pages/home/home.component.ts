@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LinkBtnComponent } from '../../shared/components/link-btn/link-btn.component';
-import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
+import { LinkBtnComponent } from '@components/link-btn/link-btn.component';
+import { NavbarComponent } from '@components/navbar/navbar.component';
 
 @Component({
   selector: 'app-home',
