@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { MainLayoutComponent } from '@layouts/main-layout/main-layout.component';
+import { AuthGuard } from '@shared/guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -22,6 +23,7 @@ export const routes: Routes = [
         loadComponent: () => import('./pages').then((m) => m.ProfileComponent),
       },
     ],
+    canActivate: [AuthGuard],
   },
   {
     path: 'login',
