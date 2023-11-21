@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '@components/button/button.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +29,13 @@ import { RouterLink } from '@angular/router';
   `,
 })
 export class LoginComponent {
+  auth = inject(AuthService);
+  router = inject(Router);
   login() {
-    console.log('LOGIN');
+    this.auth.loginWithPopup().subscribe(() => {
+      this.auth.isAuthenticated$.subscribe((isAuthenticated) => {
+        if (isAuthenticated) this.router.navigate(['/']);
+      });
+    });
   }
 }
