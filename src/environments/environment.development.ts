@@ -1,14 +1,6 @@
 export const environment = {
   auth0: {
-    domain: 'your-app.domain',
-    clientId: 'YourClientId123',
-    authorizationParams: {
-      audience: 'audience.param',
-    },
-    appUri: 'http://localhost:4200/*',
-    errorPath: '/',
-    httpInterceptor: {
-      allowedList: ['http://localhost:4200/*'],
-    },
+    domain: 'dev-38xyx7skraavng5l.us.auth0.com',
+    clientId: 'sFcapi3zTKcUhUTRP5oJtD56s2OKSAxq',
   },
 };
