@@ -23,8 +23,8 @@ import { ButtonComponent } from '@shared/components/button/button.component';
       </article>
       <div class="flex gap-2 flex-col">
         <app-link-btn class="text-center" routerLink="/">Home</app-link-btn>
-        <app-link-btn class="text-center" routerLink="/profile"
-          >Perfil</app-link-btn
+        <app-link-btn class="text-center" routerLink="/admin"
+          >Admin panel</app-link-btn
         >
         <app-button>Cerrar sesión</app-button>
         <p>
