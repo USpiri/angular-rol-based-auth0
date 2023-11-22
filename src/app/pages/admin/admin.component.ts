@@ -18,8 +18,8 @@ import { AuthService } from '@auth0/auth0-angular';
         >
         <app-button (btnClick)="logout()">Cerrar sesión</app-button>
         <p>
-          <strong>Nota:</strong> Esta es un proyecto de prueba para poder
-          manejar roles con Auth0.
+          <strong>Nota:</strong> Esta ruta está restringida solo para usuarios
+          ADMIN.
         </p>
       </div>
     </section>

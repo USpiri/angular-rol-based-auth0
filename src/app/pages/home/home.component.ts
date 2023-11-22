@@ -26,8 +26,9 @@ import { AuthService } from '@auth0/auth0-angular';
         >
         <app-button (btnClick)="logout()">Cerrar sesión</app-button>
         <p>
-          <strong>Nota:</strong> Si no puedes ingresar puede que no poseas el
-          rol adecuado, cierra sesión en ingresa con un usuario adecuado
+          <strong>Nota:</strong> Si no puedes ingresar a alguna ruta puede que
+          no poseas el rol adecuado, cierra sesión en ingresa con un usuario
+          adecuado.
         </p>
       </div>
     </section>
