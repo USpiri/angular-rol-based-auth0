@@ -30,6 +30,8 @@ import { AuthService } from '@auth0/auth0-angular';
 export class NavbarComponent {
   auth = inject(AuthService);
   logout() {
-    this.auth.logout();
+    this.auth.logout({
+      logoutParams: { returnTo: `${document.location.origin}/login` },
+    });
   }
 }

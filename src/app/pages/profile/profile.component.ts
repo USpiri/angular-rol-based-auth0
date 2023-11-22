@@ -65,6 +65,8 @@ export class ProfileComponent implements OnInit {
   }
 
   logout() {
-    this.auth.logout();
+    this.auth.logout({
+      logoutParams: { returnTo: `${document.location.origin}/login` },
+    });
   }
 }

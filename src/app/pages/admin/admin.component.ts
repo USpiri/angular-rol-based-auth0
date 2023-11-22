@@ -33,6 +33,11 @@ import { AuthService } from '@auth0/auth0-angular';
 export class AdminComponent {
   auth = inject(AuthService);
   logout() {
-    this.auth.logout();
+    /**
+     * El logout redirige la ruta '/login'
+     */
+    this.auth.logout({
+      logoutParams: { returnTo: `${document.location.origin}/login` },
+    });
   }
 }
