@@ -34,7 +34,7 @@ import { ButtonComponent } from '@shared/components/button/button.component';
   `,
   styles: `
     :host{
-      @apply flex items-center justify-center flex-col mt-28;
+      @apply flex items-center justify-center flex-col py-28;
     }
   `,
 })

@@ -17,15 +17,15 @@ import { ButtonComponent } from '@components/button/button.component';
         >
         <app-button>Cerrar sesión</app-button>
         <p>
-          <strong>Nota:</strong> Esta es un proyecto de prueba para poder
-          manejar roles con Auth0.
+          <strong>Nota:</strong> Esta ruta está restringida solo para usuarios
+          ADMIN.
         </p>
       </div>
     </section>
   `,
   styles: `
   :host{
-    @apply flex items-center justify-center flex-col mt-28;
+    @apply flex items-center justify-center flex-col py-28;
   }
 `,
 })
