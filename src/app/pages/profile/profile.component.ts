@@ -59,7 +59,6 @@ export class ProfileComponent implements OnInit {
      * Subscripción al observabled de auth0 con los datos
      * del usuario
      */
-    this.user = this.auth.user$.subscribe();
     this.auth.user$.subscribe((u) => {
       const user: User = { ...u };
       this.user = user;
