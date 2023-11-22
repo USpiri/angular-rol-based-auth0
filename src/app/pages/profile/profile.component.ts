@@ -2,7 +2,8 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LinkBtnComponent } from '@shared/components/link-btn/link-btn.component';
 import { ButtonComponent } from '@shared/components/button/button.component';
-import { AuthService, User } from '@auth0/auth0-angular';
+import { AuthService } from '@auth0/auth0-angular';
+import { User } from 'src/app/models/user.interface';
 
 @Component({
   standalone: true,
@@ -20,6 +21,7 @@ import { AuthService, User } from '@auth0/auth0-angular';
         <div>
           <h2 class="text-2xl font-semibold">{{ this.user?.name }}</h2>
           <p class="text-neutral-400">{{ this.user?.email }}</p>
+          <p class="font-semibold">{{ this.user?.role }}</p>
         </div>
       </article>
       <div>
@@ -49,12 +51,13 @@ import { AuthService, User } from '@auth0/auth0-angular';
 })
 export class ProfileComponent implements OnInit {
   auth = inject(AuthService);
-  user: User | null | undefined = new User();
+  user: User | null | undefined;
   json = '';
 
   ngOnInit(): void {
     this.user = this.auth.user$.subscribe();
-    this.auth.user$.subscribe((user) => {
+    this.auth.user$.subscribe((u) => {
+      const user: User = { ...u };
       this.user = user;
       this.json = JSON.stringify(user, null, 2);
     });
