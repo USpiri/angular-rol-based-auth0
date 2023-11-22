@@ -13,8 +13,7 @@ export const AdminGuard: CanActivateFn = () => {
        * Permite el acceso a la ruta si el rol del usuario
        * es ADMIN, de lo contrario niega la navegación
        */
-      if (user.role === 'ADMIN') return true;
-      return false;
+      return user.role === 'ADMIN';
     }),
   );
 };
