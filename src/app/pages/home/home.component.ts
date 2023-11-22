@@ -27,7 +27,7 @@ import { ButtonComponent } from '@shared/components/button/button.component';
         <p>
           <strong>Nota:</strong> Si no puedes ingresar a alguna ruta puede que
           no poseas el rol adecuado, cierra sesión en ingresa con un usuario
-          adecuado.
+          distinto.
         </p>
       </div>
     </section>
