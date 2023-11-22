@@ -6,6 +6,9 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideAuth0 } from '@auth0/auth0-angular';
 import { environment } from 'src/environments/environment';
 
+/**
+ * Auth0 provee sy propia funcion provider
+ */
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
