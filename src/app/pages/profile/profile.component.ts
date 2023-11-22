@@ -26,9 +26,9 @@ import { User } from 'src/app/models/user.interface';
       </article>
       <div>
         <h3 class="text-xl mb-2">User JSON</h3>
-        <pre class="w-full overflow-auto">
-          <code>{{ json }}</code>
-        </pre>
+        <pre
+          class="w-full overflow-auto bg-neutral-800/50 py-3 px-4 rounded-md"
+        ><code>{{ this.user | json }}</code></pre>
       </div>
       <div class="flex gap-2 flex-col">
         <app-link-btn class="text-center" routerLink="/">Home</app-link-btn>
@@ -52,7 +52,6 @@ import { User } from 'src/app/models/user.interface';
 export class ProfileComponent implements OnInit {
   auth = inject(AuthService);
   user: User | null | undefined;
-  json = '';
 
   ngOnInit(): void {
     /**
@@ -62,7 +61,6 @@ export class ProfileComponent implements OnInit {
     this.auth.user$.subscribe((u) => {
       const user: User = { ...u };
       this.user = user;
-      this.json = JSON.stringify(user, null, 2);
     });
   }
 
