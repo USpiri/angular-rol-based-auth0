@@ -17,7 +17,9 @@ import { AuthService } from '@auth0/auth0-angular';
         >Roles con Auth0</a
       >
       <section class="flex items-center gap-5">
-        <div><strong>Rol: </strong>ADMIN</div>
+        <div>
+          <strong>Rol: </strong>{{ (this.auth.user$ | async)?.['role'] }}
+        </div>
         <app-icon-btn (btnClick)="logout()" title="Logout button">
           <app-logout-icon class="fill-neutral-400"></app-logout-icon>
         </app-icon-btn>
