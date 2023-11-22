@@ -31,6 +31,11 @@ import { AuthService } from '@auth0/auth0-angular';
 export class LoginComponent {
   auth = inject(AuthService);
   router = inject(Router);
+
+  /**
+   * Permite hacer login con una ventana emergente, luego si el usuario
+   * está autenticado navega a la ruta principal
+   */
   login() {
     this.auth.loginWithPopup().subscribe(() => {
       this.auth.isAuthenticated$.subscribe((isAuthenticated) => {
