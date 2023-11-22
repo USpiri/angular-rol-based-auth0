@@ -27,8 +27,21 @@ import { RouterLink } from '@angular/router';
           Puedes intentar redirigirte a la página de inicio, pero sin éxito
           alguno.
         </p>
+        <div class="mb-4">
+          <h2 class="font-semibold text-lg mb-2">Usuarios de prueba</h2>
+          <ul>
+            <li>
+              ADMIN: admin&#64;email.com,
+              <span class="opacity-50">12345678-ADMIN</span>
+            </li>
+            <li>
+              USER: user&#64;email.com,
+              <span class="opacity-50">12345678-USER</span>
+            </li>
+          </ul>
+        </div>
         <a
-          routerLink="/home"
+          routerLink="/"
           class="underline hover:scale-[102%] hover:font-semibold transition-all"
           >Ir a inicio</a
         >
