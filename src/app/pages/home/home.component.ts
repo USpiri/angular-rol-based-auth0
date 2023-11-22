@@ -25,8 +25,9 @@ import { ButtonComponent } from '@shared/components/button/button.component';
         >
         <app-button>Cerrar sesión</app-button>
         <p>
-          <strong>Nota:</strong> Si no puedes ingresar puede que no poseas el
-          rol adecuado, cierra sesión en ingresa con un usuario adecuado
+          <strong>Nota:</strong> Si no puedes ingresar a alguna ruta puede que
+          no poseas el rol adecuado, cierra sesión en ingresa con un usuario
+          adecuado.
         </p>
       </div>
     </section>
