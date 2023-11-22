@@ -18,11 +18,14 @@ import { RouterLink } from '@angular/router';
           <h1 class="text-center text-2xl">Roles con Auth0</h1>
           <app-button (btnClick)="login()">Iniciar sesión</app-button>
         </div>
-        <p>
+        <p class="mt-8">
           <strong>Nota:</strong> Las demás rutas estarán bloqueadas a menos que
-          se inicie sesión, y algúnas de ellas estaran bloqueadas a menos que se
-          tenga un "rol" determinado. Puedes intentar redirigirte a la página de
-          inicio, pero sin éxito alguno.
+          se inicie sesión, y la ruta /admin estará restringida a usuarios
+          ADMIN.
+        </p>
+        <p>
+          Puedes intentar redirigirte a la página de inicio, pero sin éxito
+          alguno.
         </p>
         <a
           routerLink="/home"
