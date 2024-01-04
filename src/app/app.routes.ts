@@ -11,18 +11,23 @@ export const routes: Routes = [
       {
         path: '',
         title: 'Home',
-        loadComponent: () => import('./pages').then((m) => m.HomeComponent),
+        loadComponent: () =>
+          import('./pages/home/home.component').then((m) => m.HomeComponent),
       },
       {
         path: 'admin',
         title: 'Admin Dasboard',
-        loadComponent: () => import('./pages').then((m) => m.AdminComponent),
+        loadComponent: () =>
+          import('./pages/admin/admin.component').then((m) => m.AdminComponent),
         canActivate: [AdminGuard],
       },
       {
         path: 'profile',
         title: 'Perfil',
-        loadComponent: () => import('./pages').then((m) => m.ProfileComponent),
+        loadComponent: () =>
+          import('./pages/profile/profile.component').then(
+            (m) => m.ProfileComponent,
+          ),
       },
     ],
     canActivate: [AuthGuard],
@@ -30,7 +35,8 @@ export const routes: Routes = [
   {
     path: 'login',
     title: 'Login',
-    loadComponent: () => import('./pages').then((m) => m.LoginComponent),
+    loadComponent: () =>
+      import('./pages/login/login.component').then((m) => m.LoginComponent),
   },
   {
     path: '**',
